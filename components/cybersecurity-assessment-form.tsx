@@ -22,7 +22,6 @@ import {
   Mail,
   ChevronDown,
   Globe,
-  Phone,
   UserRound,
   X,
 } from "lucide-react";
@@ -92,13 +91,10 @@ export function CybersecurityAssessmentForm() {
   const [animatedScore, setAnimatedScore] = useState(0);
   const [formErrors, setFormErrors] = useState<string[]>([]);
   const [currentLanguage, setCurrentLanguage] = useState<Language>('en');
-  const [selectedDomains, setSelectedDomains] = useState<Set<string>>(new Set(domains.map(d => d.id)));
+  const [selectedDomains] = useState<Set<string>>(new Set(domains.map(d => d.id)));
   const [questions, setQuestions] = useState<Question[]>([]);
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
-  const [isSubmittingConsultation, setIsSubmittingConsultation] = useState(false);
-  const [consultationSuccess, setConsultationSuccess] = useState(false);
-  const [consultationError, setConsultationError] = useState<string | null>(null);
   const isRTL = currentLanguage === 'ar';
 
   const t = translations[currentLanguage];
@@ -159,25 +155,7 @@ export function CybersecurityAssessmentForm() {
     };
   }, [isConsultationModalOpen]);
 
-  const consultationSchema = z.object({
-    firstName: z.string().min(2, { message: "Please enter a valid first name." }),
-    lastName: z.string().min(2, { message: "Please enter a valid last name." }),
-    email: z.string().email("Please enter a valid email address."),
-    phone: z
-      .string()
-      .min(7, { message: "Please enter a valid phone number." })
-      .max(20, { message: "Phone number is too long." }),
-  });
-
-  const consultationForm = useForm<z.infer<typeof consultationSchema>>({
-    resolver: zodResolver(consultationSchema),
-    defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-    },
-  });
+  // Consultation form is no longer used; booking is handled via Cal.com iframe modal.
 
   const handlePersonalInfoSubmit = (values: z.infer<typeof formSchema>) => {
     setPersonalInfo(values);
@@ -280,41 +258,7 @@ export function CybersecurityAssessmentForm() {
     setIsLanguageDropdownOpen(false);
   };
 
-  const handleConsultationSubmit = async (values: z.infer<typeof consultationSchema>) => {
-    setConsultationError(null);
-    setIsSubmittingConsultation(true);
-    try {
-      const response = await fetch("/api/book-consultation", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...values,
-          context: {
-            personalInfo,
-            score: score ?? animatedScore,
-          },
-        }),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.message || "Failed to submit consultation request.");
-      }
-
-      consultationForm.reset();
-      setConsultationSuccess(true);
-      setIsConsultationModalOpen(false);
-    } catch (error) {
-      console.error("Error submitting consultation form:", error);
-      setConsultationError(
-        error instanceof Error ? error.message : "Something went wrong. Please try again.",
-      );
-    } finally {
-      setIsSubmittingConsultation(false);
-    }
-  };
+  // Previously used for internal consultation booking form – now replaced by Cal.com iframe modal.
 
   useEffect(() => {
     const newQuestions = questionsData[currentLanguage];
@@ -813,8 +757,6 @@ export function CybersecurityAssessmentForm() {
                           type="button"
                           className="flex h-12 w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-transparent bg-[#00AEEF] px-6 text-sm font-semibold text-white shadow-lg shadow-[#00AEEF]/30 transition-all hover:bg-[#0091cf] hover:shadow-xl"
                           onClick={() => {
-                            setConsultationSuccess(false);
-                            setConsultationError(null);
                             setIsConsultationModalOpen(true);
                           }}
                         >
@@ -885,22 +827,7 @@ export function CybersecurityAssessmentForm() {
                         </Button>
                       </motion.div>
 
-                      {!isConsultationModalOpen && consultationSuccess && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          className="mt-4 rounded-2xl border border-[#3F9C35]/30 bg-gradient-to-r from-[#f0fbf4] to-[#e6f5ed] px-6 py-5 text-center text-[#1b3a57]"
-                        >
-                          <p className="text-lg font-semibold text-[#1b3a57]">
-                            Thank you for reaching out! 🎉
-                          </p>
-                          <p className="mt-2 text-sm text-gray-700">
-                            Our consulting team has received your request and will get back to you
-                            shortly with available consultation slots. A confirmation email is on its
-                            way to your inbox.
-                          </p>
-                        </motion.div>
-                      )}
+                      {/* Legacy consultation success banner removed – booking is now handled via Cal.com */}
 
                   <motion.p
                     className={cn(styles.resultText, "relative z-0 mt-6")}
@@ -982,7 +909,6 @@ export function CybersecurityAssessmentForm() {
                   <button
                     onClick={() => {
                       setIsConsultationModalOpen(false);
-                      setConsultationError(null);
                     }}
                     className="absolute right-4 top-4 rounded-full border border-gray-200 bg-white p-1 text-gray-500 transition hover:text-gray-800"
                     aria-label="Close booking modal"
