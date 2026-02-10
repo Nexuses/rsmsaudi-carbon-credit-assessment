@@ -1,0 +1,293 @@
+export const translations = {
+  en: {
+    personalInfo: "Personal Information",
+    pleaseProvide: "Please provide your information before starting the assessment",
+    heroDescription: "Understand your organisation's security posture and identify the next best actions in minutes.",
+    name: "Name",
+    firstName: "First Name",
+    lastName: "Last Name",
+    businessEmail: "Business Email",
+    company: "Company",
+    companyName: "Company Name",
+    position: "Position",
+    jobTitle: "Job Title",
+    assessmentDate: "Assessment Date",
+    startAssessment: "Start Assessment",
+    continueToQuestions: "Continue to Questions",
+    questionIndicator: "Question {current} of {total}",
+    placeholders: {
+      name: "Enter your name",
+      firstName: "Enter your first name",
+      lastName: "Enter your last name",
+      email: "your.email@company.com",
+      company: "Enter your company name",
+      position: "Enter your job title",
+      assessmentDate: "Select a date",
+    },
+    next: "Next",
+    back: "Back",
+    finish: "Finish",
+    downloadReport: "Download Report",
+    bookAppointment: "Book Appointment",
+    assessmentResults: "Assessment Results",
+    pdfLabels: {
+      personalInfo: "Personal Information",
+      name: "Name",
+      email: "Email",
+      company: "Company",
+      position: "Position",
+      assessmentResults: "Carbon Credit Self Assessment",
+      score: "Assessment Score",
+      question: "Question",
+      answer: "Answer"
+    },
+    resultTexts: {
+      advanced: "Advanced Cybersecurity Maturity - But focus should be on continuous posture improvements. You can contact us for advice on further SOC integration and automation, regular experiential learning programs, and tabletop simulation exercises. Our team can help enhance your existing security framework with cutting-edge solutions and best practices to maintain your organization's strong security posture.",
+      solid: "Solid Cybersecurity Foundation - The organization is aligned with key cybersecurity core values. It should focus on cybersecurity maturity assessment, enterprise-wide awareness, and strengthening resilience of people, processes, and tools. You can contact us to assess your cyber maturity using our unique Cyber Quotient methodology. We'll help you build upon your existing foundation to achieve advanced security capabilities.",
+      basic: "Basic Cybersecurity - Some fundamental measures are in place, but a comprehensive cybersecurity assessment (VAPT and IT/OT audit) of all technology assets is needed as soon as possible to strengthen overall risk management and controls. You can contact us for CISO assistance framework and managed security services. Our team will help identify gaps and implement necessary security measures.",
+      urgent: "Urgent Action Required - Limited cybersecurity measures observed, indicating exposure to high risks. An immediate and detailed assessment of the organization's cyber posture is recommended. You can contact us for CISO assistance framework and managed security services. Our experts will help develop and implement a comprehensive security strategy to address critical vulnerabilities and establish essential security controls."
+    },
+    speedometer: {
+      critical: "Critical",
+      poor: "Poor",
+      fair: "Fair",
+      good: "Good"
+    },
+    resultConsultation: {
+      prefix: "You may schedule a consultation using the ",
+      linkText: "provided link",
+      middle: " or contact us directly at ",
+    },
+    resultConsultationEmail: "ladhikari@rsmsaudi.com",
+    resultConsultationUrl: "https://cal.com/linzy-rsm-saudi/esg-book-30min-call",
+    errors: {
+      selectAnswer: "Please select an answer before proceeding.",
+      pdfGeneration: "An error occurred while generating the PDF",
+      unknown: "An unknown error occurred"
+    },
+    email: {
+      subject: "Your Carbon Credit Readiness Assessment Report",
+      greeting: "Dear",
+      body: "Thank you for completing the Carbon Credit Assessment questionnaire through our online assessment platform. This report has been automatically generated based solely on the responses you provided to the assessment questions. The results are presented as-is and have not been independently validated, verified, or tested by our carbon markets consulting team.",
+      bodyPurpose: "The purpose of this report is to provide high-level insights into your organization's current carbon credit readiness, identify potential gaps, and highlight areas for improvement across key carbon market domains. It is designed to support management in understanding overall carbon market maturity and to help guide future decarbonization and carbon credit strategy initiatives.",
+      appointmentText: "Contact Our Team",
+      appointmentEmail: "ladhikari@rsmsaudi.com",
+      closing: "Kind regards,\nSustainability and ESG Team\nRSM Saudi Arabia",
+      disclaimer: "This is not a comprehensive carbon credit assessment. The assessment consists of a limited number of questions intended to provide a rapid, high-level view of selected carbon market readiness factors and practices. It does not guarantee the identification of all existing or potential gaps in your carbon strategy, emissions data quality, or regulatory compliance requirements. The results reflect the organization's carbon credit readiness posture at the time of assessment based solely on the responses provided. The report is intended for internal use only and must not be distributed to or relied upon by third parties. RSM Saudi Arabia shall not be liable for any losses, damages, claims, or expenses arising from or related to the use of this assessment or its results."
+    },
+    assessmentGuidance: {
+      title: "Assessment Guidance",
+      instructions: "Instructions",
+      instructionsDescription: "This assessment consists of single-choice questions across five dimensions of your organisation's engagement with carbon credits in Saudi Arabia. Each question has predefined answer options that reflect different levels of maturity in market awareness, strategy, governance, and financial decision-making. Please select the option that best describes your organisation today so you receive an accurate view of your current readiness in the Kingdom's voluntary carbon market.",
+      dimensions: [
+        { points: 15, title: "Awareness & Maturity", description: "How well you understand carbon credits and have basic climate foundations in place." },
+        { points: 20, title: "Drivers & Motivation", description: "Why you are considering carbon credits and how strategic this is for your organisation." },
+        { points: 25, title: "Market Readiness & Trust", description: "How prepared and confident you are to participate in carbon markets and select credible credits." },
+        { points: 20, title: "Economics & Decision-Making", description: "How you price, budget, and govern carbon-credit decisions internally." },
+        { points: 20, title: "Future Outlook", description: "When carbon credits will matter for you and how quickly you plan to scale engagement." }
+      ],
+      scoring: "Scoring: Your total score will be calculated by summing the points from all your answers. The assessment will provide you with a carbon-credit readiness level based on your total score.",
+      disclaimer: "Disclaimer",
+      disclaimerText: "This assessment does not guarantee compliance with any current or future regulations, standards, or market rules related to carbon credits. It reflects your organisation's carbon-credit readiness only at the time of completion and solely on the basis of your responses. The results are intended for internal use to support strategy and decision-making and should not be treated as legal, financial, or technical advice. We are not liable for any losses, decisions, or actions taken based on the assessment outcomes.",
+      beginAssessment: "Begin Assessment",
+      agreeToTerms: "By clicking \"Begin Assessment\", you agree to our",
+      privacyPolicy: "privacy policy",
+      and: "and",
+      termsAndConditions: "terms and conditions"
+    }
+  },
+  fr: {
+    personalInfo: "Informations personnelles",
+    pleaseProvide: "Veuillez fournir vos informations avant de commencer l'évaluation",
+    heroDescription: "Évaluez la posture de cybersécurité de votre organisation et identifiez les prochaines actions en quelques minutes.",
+    name: "Nom",
+    firstName: "Prénom",
+    lastName: "Nom de famille",
+    businessEmail: "Email professionnel",
+    company: "Entreprise",
+    companyName: "Nom de l'entreprise",
+    position: "Poste",
+    jobTitle: "Intitulé du poste",
+    assessmentDate: "Date d'évaluation",
+    startAssessment: "Commencer l'évaluation",
+    continueToQuestions: "Continuer vers les questions",
+    questionIndicator: "Question {current} sur {total}",
+    placeholders: {
+      name: "Entrez votre nom",
+      firstName: "Entrez votre prénom",
+      lastName: "Entrez votre nom de famille",
+      email: "votre.email@entreprise.com",
+      company: "Entrez le nom de votre entreprise",
+      position: "Entrez votre intitulé de poste",
+      assessmentDate: "Sélectionnez une date",
+    },
+    next: "Suivant",
+    back: "Retour",
+    finish: "Terminer",
+    downloadReport: "Télécharger le rapport",
+    bookAppointment: "Prendre rendez-vous",
+    assessmentResults: "Résultats de l'évaluation",
+    pdfLabels: {
+      personalInfo: "Informations Personnelles",
+      name: "Nom",
+      email: "Email",
+      company: "Entreprise",
+      position: "Poste",
+      assessmentResults: "Résultats de l'Évaluation de Cybersécurité",
+      score: "Score d'Évaluation",
+      question: "Question",
+      answer: "Réponse"
+    },
+    resultTexts: {
+      advanced: "Maturité Cybernétique Avancée – L'accent doit être mis sur l'amélioration continue de la posture. Vous pouvez nous contacter pour des conseils sur l'intégration et l'automatisation avancées du SOC, des programmes d'apprentissage expérientiel réguliers et des exercices de simulation sur table. Notre équipe peut vous aider à améliorer votre cadre de sécurité existant avec des solutions de pointe et les meilleures pratiques pour maintenir la forte posture de sécurité de votre organisation.",
+      solid: "Fondation Cybersécuritaire Solide – L'organisation est alignée sur les valeurs fondamentales de la cybersécurité. Elle devrait se concentrer sur l'évaluation de la maturité cybersécuritaire, la sensibilisation à l'échelle de l'entreprise et le renforcement de la résilience des personnes, des processus et des outils. Vous pouvez nous contacter pour évaluer votre maturité cyber en utilisant notre méthodologie unique Cyber Quotient. Nous vous aiderons à développer vos bases existantes pour atteindre des capacités de sécurité avancées.",
+      basic: "Cybersécurité de Base – Certaines mesures fondamentales sont en place, mais une évaluation complète de la cybersécurité (audit VAPT et IT/OT) de tous les actifs technologiques est nécessaire dès que possible pour renforcer la gestion globale des risques et les contrôles. Vous pouvez nous contacter pour le cadre d'assistance CISO et les services de sécurité gérés. Notre équipe vous aidera à identifier les lacunes et à mettre en œuvre les mesures de sécurité nécessaires.",
+      urgent: "Action Urgente Requise – Mesures de cybersécurité limitées observées, indiquant une exposition à des risques élevés. Une évaluation immédiate et détaillée de la posture cyber de l'organisation est recommandée. Vous pouvez nous contacter pour le cadre d'assistance CISO et les services de sécurité gérés. Nos experts vous aideront à développer et à mettre en œuvre une stratégie de sécurité complète pour traiter les vulnérabilités critiques et établir des contrôles de sécurité essentiels."
+    },
+    speedometer: {
+      critical: "Critical",
+      poor: "Poor",
+      fair: "Fair",
+      good: "Good"
+    },
+    resultConsultation: {
+      prefix: "You may schedule a consultation using the ",
+      linkText: "provided link",
+      middle: " or contact us directly at ",
+    },
+    resultConsultationEmail: "ladhikari@rsmsaudi.com",
+    resultConsultationUrl: "https://cal.com/linzy-rsm-saudi/esg-book-30min-call",
+    errors: {
+      selectAnswer: "Veuillez sélectionner une réponse avant de continuer.",
+      pdfGeneration: "Une erreur s'est produite lors de la génération du PDF",
+      unknown: "Une erreur inconnue s'est produite"
+    },
+    email: {
+      subject: "Votre Rapport d'Évaluation Cybersécurité Est Prêt",
+      greeting: "Cher/Chère",
+      body: "Thank you for completing the Cyber Security Assessment questionnaire through our online assessment platform. This report has been automatically generated based solely on the responses you provided to the assessment questions. The results are presented as-is and have not been independently validated, verified, or tested by our cybersecurity team.",
+      bodyPurpose: "The purpose of this report is to provide high-level insights into your organization's current cybersecurity posture, identify potential gaps, and highlight areas for improvement across key cyber security domains. It is designed to support management in understanding overall cyber maturity and to help guide future cybersecurity enhancement initiatives.",
+      appointmentText: "Pour prendre rendez-vous avec notre équipe, veuillez envoyer un e-mail à",
+      appointmentEmail: "enquiry@rsmmena.nexuses.xyz",
+      closing: "Kind regards,\nCyber Security Team\nRSM MENA",
+      disclaimer: "This is not a comprehensive cyber security assessment. The assessment consists of a limited number of questions intended to provide a rapid, high-level view of selected cyber security controls and practices. It does not guarantee the identification of all existing or potential security vulnerabilities, risks, or control gaps. The results reflect the organization's cyber security posture at the time of assessment based solely on the responses provided. The report is intended for internal use only and must not be distributed to or relied upon by third parties. RSM shall not be liable for any losses, damages, claims, or expenses arising from or related to the use of this assessment or its results."
+    },
+    assessmentGuidance: {
+      title: "Guide d'Évaluation",
+      instructions: "Instructions",
+      instructionsDescription: "This assessment consists of single-choice questions across five dimensions of your organisation's engagement with carbon credits in Saudi Arabia. Each question has predefined answer options that reflect different levels of maturity in market awareness, strategy, governance, and financial decision-making. Please select the option that best describes your organisation today so you receive an accurate view of your current readiness in the Kingdom's voluntary carbon market.",
+      dimensions: [
+        { points: 15, title: "Awareness & Maturity", description: "How well you understand carbon credits and have basic climate foundations in place." },
+        { points: 20, title: "Drivers & Motivation", description: "Why you are considering carbon credits and how strategic this is for your organisation." },
+        { points: 25, title: "Market Readiness & Trust", description: "How prepared and confident you are to participate in carbon markets and select credible credits." },
+        { points: 20, title: "Economics & Decision-Making", description: "How you price, budget, and govern carbon-credit decisions internally." },
+        { points: 20, title: "Future Outlook", description: "When carbon credits will matter for you and how quickly you plan to scale engagement." }
+      ],
+      scoring: "Scoring: Your total score will be calculated by summing the points from all your answers. The assessment will provide you with a carbon-credit readiness level based on your total score.",
+      disclaimer: "Avertissement",
+      disclaimerText: "This assessment does not guarantee compliance with any current or future regulations, standards, or market rules related to carbon credits. It reflects your organisation's carbon-credit readiness only at the time of completion and solely on the basis of your responses. The results are intended for internal use to support strategy and decision-making and should not be treated as legal, financial, or technical advice. We are not liable for any losses, decisions, or actions taken based on the assessment outcomes.",
+      beginAssessment: "Commencer l'Évaluation",
+      agreeToTerms: "En cliquant sur \"Commencer l'Évaluation\", vous acceptez notre",
+      privacyPolicy: "politique de confidentialité",
+      and: "et",
+      termsAndConditions: "conditions générales"
+    }
+  },
+  ar: {
+    personalInfo: "المعلومات الشخصية",
+    pleaseProvide: "يرجى تقديم معلوماتك قبل بدء التقييم",
+    heroDescription: "قم بفهم وضع الأمن السيبراني لمنظمتك وحدد أفضل الخطوات التالية في دقائق.",
+    name: "الاسم",
+    firstName: "الاسم الأول",
+    lastName: "اسم العائلة",
+    businessEmail: "البريد الإلكتروني للعمل",
+    company: "الشركة",
+    companyName: "اسم الشركة",
+    position: "المنصب",
+    jobTitle: "المسمى الوظيفي",
+    assessmentDate: "تاريخ التقييم",
+    startAssessment: "بدء التقييم",
+    continueToQuestions: "متابعة إلى الأسئلة",
+    questionIndicator: "السؤال {current} من {total}",
+    placeholders: {
+      name: "أدخل اسمك",
+      firstName: "أدخل اسمك الأول",
+      lastName: "أدخل اسم عائلتك",
+      email: "بريدك.الإلكتروني@الشركة.com",
+      company: "أدخل اسم شركتك",
+      position: "أدخل مسماك الوظيفي",
+      assessmentDate: "اختر التاريخ",
+    },
+    next: "التالي",
+    back: "رجوع",
+    finish: "إنهاء",
+    downloadReport: "تحميل التقرير",
+    bookAppointment: "حجز موعد",
+    assessmentResults: "نتائج التقييم",
+    pdfLabels: {
+      personalInfo: "المعلومات الشخصية",
+      name: "الاسم",
+      email: "البريد الإلكتروني",
+      company: "الشركة",
+      position: "المنصب",
+      assessmentResults: "نتائج تقييم الأمن السيبراني",
+      score: "نتيجة التقييم",
+      question: "السؤال",
+      answer: "الإجابة"
+    },
+    resultTexts: {
+      advanced: "نضج الأمن السيبراني المتقدم - يجب التركيز على التحسين المستمر للموقف الأمني. يمكنك الاتصال بنا للحصول على المشورة بشأن المزيد من تكامل وأتمتة مركز العمليات الأمنية، وبرامج التعلم التجريبي المنتظمة، وتمارين المحاكاة. يمكن لفريقنا المساعدة في تحسين إطار الأمان الحالي لديك من خلال حلول متطورة وأفضل الممارسات للحفاظ على موقف الأمان القوي لمؤسستك.",
+      solid: "أساس قوي للأمن السيبراني - المؤسسة متوافقة مع القيم الأساسية الرئيسية للأمن السيبراني. يجب أن تركز على تقييم نضج الأمن السيبراني، والتوعية على مستوى المؤسسة، وتعزيز مرونة الأفراد والعمليات والأدوات. يمكنك الاتصال بنا لتقييم نضجك السيبراني باستخدام منهجية معامل الأمن السيبراني الفريدة لدينا. سنساعدك في البناء على أساسك الحالي لتحقيق قدرات أمنية متقدمة.",
+      basic: "الأمن السيبراني الأساسي - بعض التدابير الأساسية موجودة، ولكن هناك حاجة إلى تقييم شامل للأمن السيبراني (تقييم الثغرات الأمنية واختبار الاختراق وتدقيق تكنولوجيا المعلومات/التكنولوجيا التشغيلية) لجميع الأصول التكنولوجية في أقرب وقت ممكن لتعزيز إدارة المخاطر الشاملة والضوابط. يمكنك الاتصال بنا للحصول على إطار مساعدة مسؤول أمن المعلومات وخدمات الأمن المدارة. سيساعدك فريقنا في تحديد الثغرات وتنفيذ تدابير الأمان اللازمة.",
+      urgent: "مطلوب إجراء عاجل - لوحظت تدابير محدودة للأمن السيبراني، مما يشير إلى التعرض لمخاطر عالية. يوصى بإجراء تقييم فوري ومفصل لموقف الأمن السيبراني للمؤسسة. يمكنك الاتصال بنا للحصول على إطار مساعدة مسؤول أمن المعلومات وخدمات الأمن المدارة. سيساعدك خبراؤنا في تطوير وتنفيذ استراتيجية أمنية شاملة لمعالجة نقاط الضعف الحرجة وإنشاء ضوابط أمنية أساسية."
+    },
+    speedometer: {
+      critical: "Critical",
+      poor: "Poor",
+      fair: "Fair",
+      good: "Good"
+    },
+    resultConsultation: {
+      prefix: "You may schedule a consultation using the ",
+      linkText: "provided link",
+      middle: " or contact us directly at ",
+    },
+    resultConsultationEmail: "ladhikari@rsmsaudi.com",
+    resultConsultationUrl: "https://cal.com/linzy-rsm-saudi/esg-book-30min-call",
+    errors: {
+      selectAnswer: "يرجى اختيار إجابة قبل المتابعة.",
+      pdfGeneration: "حدث خطأ أثناء إنشاء ملف PDF",
+      unknown: "حدث خطأ غير معروف"
+    },
+    email: {
+      subject: "تقرير تقييم الأمن السيبراني الخاص بك جاهز",
+      greeting: "عزيزي/عزيزتي",
+      body: "Thank you for completing the Cyber Security Assessment questionnaire through our online assessment platform. This report has been automatically generated based solely on the responses you provided to the assessment questions. The results are presented as-is and have not been independently validated, verified, or tested by our cybersecurity team.",
+      bodyPurpose: "The purpose of this report is to provide high-level insights into your organization's current cybersecurity posture, identify potential gaps, and highlight areas for improvement across key cyber security domains. It is designed to support management in understanding overall cyber maturity and to help guide future cybersecurity enhancement initiatives.",
+      appointmentText: "لحجز موعد مع فريقنا، يرجى إرسال بريد إلكتروني إلى",
+      appointmentEmail: "enquiry@rsmmena.nexuses.xyz",
+      closing: "Kind regards,\nCyber Security Team\nRSM MENA",
+      disclaimer: "This is not a comprehensive cyber security assessment. The assessment consists of a limited number of questions intended to provide a rapid, high-level view of selected cyber security controls and practices. It does not guarantee the identification of all existing or potential security vulnerabilities, risks, or control gaps. The results reflect the organization's cyber security posture at the time of assessment based solely on the responses provided. The report is intended for internal use only and must not be distributed to or relied upon by third parties. RSM shall not be liable for any losses, damages, claims, or expenses arising from or related to the use of this assessment or its results."
+    },
+    assessmentGuidance: {
+      title: "إرشادات التقييم",
+      instructions: "التعليمات",
+      instructionsDescription: "This assessment consists of single-choice questions across five dimensions of your organisation's engagement with carbon credits in Saudi Arabia. Each question has predefined answer options that reflect different levels of maturity in market awareness, strategy, governance, and financial decision-making. Please select the option that best describes your organisation today so you receive an accurate view of your current readiness in the Kingdom's voluntary carbon market.",
+      dimensions: [
+        { points: 15, title: "Awareness & Maturity", description: "How well you understand carbon credits and have basic climate foundations in place." },
+        { points: 20, title: "Drivers & Motivation", description: "Why you are considering carbon credits and how strategic this is for your organisation." },
+        { points: 25, title: "Market Readiness & Trust", description: "How prepared and confident you are to participate in carbon markets and select credible credits." },
+        { points: 20, title: "Economics & Decision-Making", description: "How you price, budget, and govern carbon-credit decisions internally." },
+        { points: 20, title: "Future Outlook", description: "When carbon credits will matter for you and how quickly you plan to scale engagement." }
+      ],
+      scoring: "Scoring: Your total score will be calculated by summing the points from all your answers. The assessment will provide you with a carbon-credit readiness level based on your total score.",
+      disclaimer: "إخلاء المسؤولية",
+      disclaimerText: "This assessment does not guarantee compliance with any current or future regulations, standards, or market rules related to carbon credits. It reflects your organisation's carbon-credit readiness only at the time of completion and solely on the basis of your responses. The results are intended for internal use to support strategy and decision-making and should not be treated as legal, financial, or technical advice. We are not liable for any losses, decisions, or actions taken based on the assessment outcomes.",
+      beginAssessment: "بدء التقييم",
+      agreeToTerms: "بالنقر على \"بدء التقييم\"، فإنك توافق على",
+      privacyPolicy: "سياسة الخصوصية",
+      and: "و",
+      termsAndConditions: "الشروط والأحكام"
+    }
+  }
+}; 
