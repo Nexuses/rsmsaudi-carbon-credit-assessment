@@ -483,25 +483,55 @@ function columnToLetter(column: number): string {
   return letter;
 }
 
+// Load Google credentials from env: file path (GOOGLE_APPLICATION_CREDENTIALS) or single-line JSON (GOOGLE_SERVICE_ACCOUNT_CREDENTIALS)
+function getGoogleAuthCredentials(): object | undefined {
+  const keyPath = process.env.GOOGLE_APPLICATION_CREDENTIALS;
+  if (keyPath) {
+    try {
+      const fs = require('fs');
+      const path = require('path');
+      const resolved = path.isAbsolute(keyPath) ? keyPath : path.join(process.cwd(), keyPath);
+      const raw = fs.readFileSync(resolved, 'utf8');
+      return JSON.parse(raw);
+    } catch (e) {
+      console.error('Google credentials file error:', e);
+      return undefined;
+    }
+  }
+  const raw = process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS;
+  if (!raw || typeof raw !== 'string') return undefined;
+  try {
+    return JSON.parse(raw.trim());
+  } catch (e) {
+    console.error('Google credentials JSON parse error (is GOOGLE_SERVICE_ACCOUNT_CREDENTIALS on a single line?):', e);
+    return undefined;
+  }
+}
+
 // Function to write assessment data to Google Sheets
 async function writeToGoogleSheets(
   personalInfo: PersonalInfo,
   answers: Record<string, string>,
   score: number,
   language: 'en' | 'fr' | 'ar'
-) {
+): Promise<{ success: boolean; error?: string }> {
   try {
-    // Initialize Google Sheets API
+    const credentials = getGoogleAuthCredentials();
+    if (!credentials) {
+      const msg = 'Google Sheets skipped: set GOOGLE_APPLICATION_CREDENTIALS (path to JSON file) or GOOGLE_SERVICE_ACCOUNT_CREDENTIALS (single-line JSON).';
+      console.warn(msg);
+      return { success: false, error: msg };
+    }
+
     const auth = new google.auth.GoogleAuth({
-      credentials: process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS 
-        ? JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS)
-        : undefined,
+      credentials,
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
 
     const sheets = google.sheets({ version: 'v4', auth });
-    const spreadsheetId = '1PTQABx0jX010HDNT2b1aFflV5WfjZ6dCrvsdjZ0z3ME';
-    const sheetName = 'Sheet1'; // Change if your sheet has a different name
+    // Google Sheets ID for: https://docs.google.com/spreadsheets/d/1QhL3v-W_ZvQF7UM6py8CvDho_HzlxXhLqwBqDPpXsIw/edit
+    const spreadsheetId = '1QhL3v-W_ZvQF7UM6py8CvDho_HzlxXhLqwBqDPpXsIw';
+    const sheetName = 'Sheet1'; // Change if your sheet/tab has a different name
 
     // Get current questions for the language
     const currentQuestions = questionsData[language] || questionsData.en;
@@ -595,9 +625,11 @@ async function writeToGoogleSheets(
     });
 
     console.log('Successfully wrote assessment data to Google Sheets');
+    return { success: true };
   } catch (error) {
+    const errMsg = error instanceof Error ? error.message : String(error);
     console.error('Error writing to Google Sheets:', error);
-    // Don't throw error - we don't want to fail the email sending if sheets write fails
+    return { success: false, error: errMsg };
   }
 }
 
@@ -860,9 +892,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     })
 
     // Write assessment data to Google Sheets
-    await writeToGoogleSheets(personalInfo, answers, score, language);
+    const sheetsResult = await writeToGoogleSheets(personalInfo, answers, score, language);
 
-    res.status(200).json({ message: 'Assessment results sent successfully' })
+    res.status(200).json({
+      message: 'Assessment results sent successfully',
+      sheetsUpdated: sheetsResult.success,
+      ...(sheetsResult.error && { sheetsError: sheetsResult.error }),
+    })
   } catch (error) {
     console.error('Error sending email:', error)
     res.status(500).json({ message: 'Failed to send assessment results' })
