@@ -72,7 +72,7 @@ export const translations = {
       bodyPurpose: "The purpose of this report is to provide high-level insights into your organization's current carbon credit readiness, identify potential gaps, and highlight areas for improvement across key carbon market domains. It is designed to support management in understanding overall carbon market maturity and to help guide future decarbonization and carbon credit strategy initiatives.",
       appointmentText: "Contact Our Team",
       appointmentEmail: "ladhikari@rsmsaudi.com",
-      closing: "Kind regards,\nSustainability and ESG Team\nRSM Saudi Arabia",
+      closing: "Kind regards,\nSustainability and ESG Team",
       disclaimer: "This is not a comprehensive carbon credit assessment. The assessment consists of a limited number of questions intended to provide a rapid, high-level view of selected carbon market readiness factors and practices. It does not guarantee the identification of all existing or potential gaps in your carbon strategy, emissions data quality, or regulatory compliance requirements. The results reflect the organization's carbon credit readiness posture at the time of assessment based solely on the responses provided. The report is intended for internal use only and must not be distributed to or relied upon by third parties. RSM Saudi Arabia shall not be liable for any losses, damages, claims, or expenses arising from or related to the use of this assessment or its results."
     },
     assessmentGuidance: {

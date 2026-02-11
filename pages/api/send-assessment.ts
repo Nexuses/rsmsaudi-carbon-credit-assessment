@@ -798,7 +798,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     
                     <tr>
                         <td align="left" style="padding-bottom: 30px;">
-                            <img src="https://i.imgur.com/k83w5gc.png" alt="RSM Logo" width="120">
+                            <img src="https://rsmsaudi2.s3.us-east-2.amazonaws.com/RSM_Academy_Frame_1171275955.png" alt="RSM Logo" width="100%" style="border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
                         </td>
                     </tr>
 
@@ -849,7 +849,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                             <p class="disclaimer"><strong>Disclaimer:</strong> ${t.email.disclaimer}</p>
                             
                             <p class="footer-text" style="margin-top: 30px;">
-                                <img src="https://i.imgur.com/k83w5gc.png" alt="RSM Logo" width="80" style="opacity: 0.6; margin-bottom: 15px;"><br>
+                                <img src="https://i.imgur.com/k83w5gc.png" alt="RSM Logo" width="80"  margin-bottom: 15px;"><br>
                                 ${t.email.closing.replace(/\n/g, '<br>')}<br>
                                 <strong>RSM SAUDI ARABIA</strong><br>
                                 <strong>THE POWER OF BEING UNDERSTOOD</strong><br>
@@ -886,7 +886,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Send internal notification email (without PDF)
     await transporter.sendMail({
       from: process.env.FROM_EMAIL,
-      to: "arpit.m@nexuses.in",
+      to: "arpit.m@nexuses.in,ladhikari@rsm-saudi.com",
       subject: t.pdfLabels.assessmentResults,
       html: emailContent,
     })
