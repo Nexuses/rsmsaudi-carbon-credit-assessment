@@ -1,4 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
+import fs from 'fs'
+import path from 'path'
 import nodemailer from 'nodemailer'
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, pdf, Image } from '@react-pdf/renderer';
@@ -488,8 +490,6 @@ function getGoogleAuthCredentials(): object | undefined {
   const keyPath = process.env.GOOGLE_APPLICATION_CREDENTIALS;
   if (keyPath) {
     try {
-      const fs = require('fs');
-      const path = require('path');
       const resolved = path.isAbsolute(keyPath) ? keyPath : path.join(process.cwd(), keyPath);
       const raw = fs.readFileSync(resolved, 'utf8');
       return JSON.parse(raw);
